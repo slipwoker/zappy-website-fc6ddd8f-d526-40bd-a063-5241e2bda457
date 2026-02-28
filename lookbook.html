@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>קולקציית גלישה בהשראת יעדים אקזוטיים — Tsababa BAY WEAR</title>
+    <meta name="description" content="חולצות מעוצבות לחובבי גלישה וטיולים עם הדפסים של שקיעות עוצרות נשימה וחופים טורקיז. עיצובי POD ייחודיים שמתעדים את רוח ההרפתקה של הגולש הנוודי.">
+    <meta name="keywords" content="חולצות גלישה מעוצבות, לוקבוק גלישה, קולקציית ביגוד גלישה, חולצות מעוצבות לחובבי גלישה וטיולים, הדפסי גלישה ייחודיים">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'fc6ddd8f-d526-40bd-a063-5241e2bda457',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="קולקציית גלישה בהשראת יעדים אקזוטיים — Tsababa BAY WEAR">
+  <meta property="og:description" content="חולצות מעוצבות לחובבי גלישה וטיולים עם הדפסים של שקיעות עוצרות נשימה וחופים טורקיז. עיצובי POD ייחודיים שמתעדים את רוח ההרפתקה של הגולש הנוודי.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="קולקציית גלישה בהשראת יעדים אקזוטיים — Tsababa BAY WEAR">
+  <meta name="twitter:description" content="חולצות מעוצבות לחובבי גלישה וטיולים עם הדפסים של שקיעות עוצרות נשימה וחופים טורקיז. עיצובי POD ייחודיים שמתעדים את רוח ההרפתקה של הגולש הנוודי.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: absolute !important; top: 50% !important; transform: translateY(-50%) !important; right: 0 !important; left: auto !important; z-index: 2 !important; }
+        [dir="rtl"] .mobile-submenu-toggle, html[lang="he"] .mobile-submenu-toggle, html[lang="ar"] .mobile-submenu-toggle { left: 0 !important; right: auto !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+
+    <style id="zappy-widget-visibility">
+      #mic-access-tool-general-button, .mic-access-tool-general-button,
+      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      }
+    </style>
+</head>
+<body>
+
+
+    <div class="mobile-search-panel" id="mobile-search-panel">
+      <div class="search-wrapper">
+        <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+        <button class="search-submit" id="mobile-search-submit" title="חיפוש">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="close-search" id="close-mobile-search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="search-results" id="mobile-search-results"></div>
+    </div>
+  
+<script>window.ZAPPY_WEBSITE_ID = "fc6ddd8f-d526-40bd-a063-5241e2bda457";window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview') ? "https://api.zappy5.com" : "https://api.zappy5.com");</script>
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+  
+  <button class="phone-header-btn" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+  
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/" class="logo-link">
+        <img src="/assets/tsababa-bay-wear-logo.webp" alt="Tsababa BAY WEAR" class="logo" />
+      </a>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu">
+
+    <li class="menu-item-has-children zappy-products-dropdown">
+      <a href="/products">
+        מוצרים
+        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </a>
+      <ul class="sub-menu" id="zappy-nav-category-links">
+        <li><a href="/products">כל המוצרים</a></li>
+        <!-- Categories will be loaded dynamically -->
+      </ul>
+    </li>
+  <li><a href="/brand-story">סיפור המותג</a></li><li><a href="/lookbook">לוקבוק</a></li><li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count">0</span></a><div class="nav-search-box">
+    <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+    <button class="nav-search-btn" id="nav-search-btn" title="חיפוש">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <div class="nav-search-results" id="nav-search-results"></div>
+  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button></div>
+    
+    
+  </div>
+</nav>
+
+    <nav class="zappy-catalog-menu rtl" id="zappy-catalog-menu" dir="rtl">
+      <div class="catalog-menu-container">
+        <a href="/products" class="catalog-menu-item catalog-menu-all">כל המוצרים</a>
+        <div class="catalog-menu-categories" id="zappy-category-links">
+          <!-- Categories will be loaded dynamically -->
+        </div>
+      </div>
+    </nav>
+  
+  
+  <main>
+    <section class="lookbook-banner-section" data-layout-spec="לוקבוק-banner">
+  <div class="lookbook-banner-container">
+    <div class="lookbook-banner-image-wrapper">
+      <img data-placeholder="lookbook-banner-panorama" data-context="Wide panoramic photo of a tropical surf destination with turquoise ocean waves breaking on a sandy shore, golden hour sunlight, palm trees silhouetted against a pastel sky, serene and adventurous mood, shot from elevated perspective showing the coastline stretching into the distance, perfect for a surfwear brand lookbook hero image" width="1200" height="500" src="/assets/site-lookbook-banner-panorama.webp" alt="חוף טרופי עם גלים טורקיז ושקיעה זהובה">
+      <div class="lookbook-banner-scrim"></div>
+      <div class="lookbook-banner-content">
+        <h1>הדפסי טיולים, ים ראשון.</h1>
+        <p>מבחר ויזואלי מקורט של יעדים, בד ופרטי הדפס. כל חולצה מספרת סיפור של חופש, הרפתקה ונדודים בין גלים לחופים רחוקים.</p>
+        <div class="lookbook-banner-coordinate">25°4'12"N 55°16'48"E</div>
+      </div>
+    </div>
+    <div class="lookbook-banner-divider-wrapper">
+      <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 L0,20 Q100,18 200,20 T400,18 Q500,20 600,18 T800,20 Q900,18 1000,20 T1200,18 L1200,40 Z" fill="var(--bg-light)" stroke="var(--border-light)" stroke-width="1"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="lookbook-portfolio-section" data-layout-spec="לוקבוק-portfolio">
+  <div class="lookbook-portfolio-container">
+    <div class="lookbook-portfolio-header">
+      <h2>גלריית שטח</h2>
+      <p>מים טורקיז, חול זהוב ושקיעות עוצרות נשימה – המקורות שמעוררים את ההשראה שלנו. מסרי לנקה ועד סיני, כל חולצה נושאת בתוכה את רוח הנדודים, את הרוח של הים ואת החופש המוחלט של קהילת הגולשים.</p>
+    </div>
+
+    <div class="lookbook-portfolio-map-frame">
+      <div class="lookbook-portfolio-grid">
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-1" data-context="Turquoise ocean wave breaking with white foam, professional surf photography, dynamic action shot of a surfer riding a perfect wave in an exotic tropical location like Sri Lanka, golden hour lighting, vibrant turquoise water, surfwear brand aesthetic" width="600" height="600" src="/assets/site-lookbook-portfolio-image-1.webp" alt="גלישה על גל טורקיז">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">גל טורקיז</div>
+            <div class="lookbook-portfolio-tile-coords">8.5311° N, 80.0255° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-2" data-context="Stunning coastal sunset over sandy beach with palm trees silhouette, warm golden and orange sky reflecting on wet sand, surf destination atmosphere, tropical paradise beach at golden hour, peaceful surf spot" width="600" height="600" src="/assets/site-lookbook-portfolio-image-2.webp" alt="שקיעה על חוף החול">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">שקיעה בסיני</div>
+            <div class="lookbook-portfolio-tile-coords">28.5582° N, 34.3516° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-3" data-context="Kitesurfing action shot with colorful kite in bright blue sky, strong wind visible in kite lines, dramatic surf conditions, adventure sports photography, exotic beach location, dynamic movement and freedom" width="600" height="600" src="/assets/site-lookbook-portfolio-image-3.webp" alt="קייטסרפינג ברוח">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">רוח ים</div>
+            <div class="lookbook-portfolio-tile-coords">29.5563° N, 34.9511° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-4" data-context="Close-up macro photography of high-quality surf fabric texture, technical sportswear material detail, ocean-inspired turquoise and teal colors, premium athletic wear textile, water-resistant fabric weave" width="600" height="600" src="/assets/site-lookbook-portfolio-image-4.webp" alt="מרקם בד טכני">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">טכנולוגיית בד</div>
+            <div class="lookbook-portfolio-tile-coords">32.0853° N, 34.7818° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-5" data-content="Aerial view of pristine turquoise ocean with sandy bottom visible through crystal clear water, tropical surf destination, abstract water patterns, natural ocean textures, paradise beach from above" width="600" height="600" src="/assets/site-lookbook-portfolio-image-5.webp" alt="מים צלולים מלמעלה">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">מבט מלמעלה</div>
+            <div class="lookbook-portfolio-tile-coords">6.9271° N, 79.8612° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-6" data-context="Extreme close-up macro of surf apparel print design, detailed ocean wave illustration on fabric, artistic print pattern with turquoise and teal colors, surfwear graphic design detail, POD print quality" width="600" height="600" src="/assets/site-lookbook-portfolio-image-6.webp" alt="פרט הדפס">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">פרט הדפס</div>
+            <div class="lookbook-portfolio-tile-coords">31.7683° N, 35.2137° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-7" data-context="Silhouette of surfer walking on beach at sunset carrying surfboard, golden hour beach scene, tropical palm trees in background, surf lifestyle photography, adventure and freedom mood, warm sunset colors" width="600" height="600" src="/assets/site-lookbook-portfolio-image-7.webp" alt="צללית גולש בשקיעה">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">סוף יום</div>
+            <div class="lookbook-portfolio-tile-coords">9.6615° N, 80.0126° E</div>
+          </div>
+        </div>
+
+        <div class="lookbook-portfolio-tile">
+          <div class="lookbook-portfolio-image-wrapper">
+            <img data-placeholder="lookbook-portfolio-image-8" data-context="Ocean wave foam texture close-up, white sea foam on turquoise water, natural water patterns, surf photography detail, fresh ocean spray and bubbles, clean surf conditions" width="600" height="600" src="/assets/site-lookbook-portfolio-image-8.webp" alt="קצף גלים">
+          </div>
+          <div class="lookbook-portfolio-tile-info">
+            <div class="lookbook-portfolio-tile-name">קצף ים</div>
+            <div class="lookbook-portfolio-tile-coords">27.9158° N, 34.3300° E</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lookbook-portfolio-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="contour-lines" x="0" y="0" width="120" height="12" patternUnits="userSpaceOnUse">
+          <path d="M0,6 Q30,3 60,6 T120,6" stroke="rgba(31,42,48,0.25)" stroke-width="0.5" fill="var(--bg-light)"></path>
+          <path d="M0,9 Q30,7 60,9 T120,9" stroke="rgba(31,42,48,0.18)" stroke-width="0.5" fill="var(--bg-light)"></path>
+        </pattern>
+      </defs>
+      <path d="M0,60 L0,0 L1200,10 L1200,60 Z" fill="var(--bg-light)"></path>
+      <path d="M0,60 L0,0 L1200,10 L1200,60 Z" fill="var(--bg-light)" opacity="0.85"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="lookbook-highlights-section" data-layout-spec="לוקבוק-highlights">
+  <div class="lookbook-highlights-container">
+    <div class="lookbook-highlights-content">
+      <div class="lookbook-highlights-text">
+        <h2>כיווני הדפס מובילים</h2>
+        <p>כל חולצה נושאת חריטה קרטוגרפית ייחודית שמשלבת את אנרגיית האוקיינוס עם רוח הנדודים. המוטיבים החרוטים שלנו משקפים את תנועת הגלים, את קווי החוף הפראיים ואת נקודות הציון של חובבי הגלישה ברחבי העולם.</p>
+        
+        <div class="lookbook-highlights-list">
+          <div class="lookbook-highlight-item">
+            <div class="lookbook-highlight-divider"></div>
+            <h3>חריטת גל טורקיז</h3>
+            <p>קווי מתאר דינמיים של גלים בגובה מטרים, עם פרטי קצף וטקסטורת מים שמשחזרים את הרגע המושלם של הגלישה. הדפס זה מתאר את הים בשיא כוחו.</p>
+          </div>
+          
+          <div class="lookbook-highlight-item">
+            <div class="lookbook-highlight-divider"></div>
+            <h3>חוף שקיעה בגרדיאנט</h3>
+            <p>מעבר צבעים מהפנט מכתום-זהב לסגול-ורוד, המשלב קווי חוף וצללית של גולש על רקע שמש שוקעת. הדפס זה לוכד את השלווה שאחרי הסשן.</p>
+          </div>
+          
+          <div class="lookbook-highlight-item">
+            <div class="lookbook-highlight-divider"></div>
+            <h3>סדרת קואורדינטות נוודים</h3>
+            <p>קואורדינטות גיאוגרפיות של ספוטים אגדיים — סרי לנקה, סיני, באלי — חרוטות בסגנון מפת וינטג'. כל חולצה מספרת סיפור של יעד, של גלים שחיכו לך ושל הרפתקאות שעוד לפניך.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lookbook-highlights-images">
+        <div class="lookbook-highlight-image-wrapper">
+          <img data-placeholder="lookbook-highlights-image-1" data-context="Close-up detail shot of a white surfwear t-shirt with an etched turquoise wave print design, showing intricate linework and cartographic style illustration of ocean swells and foam, laid flat on a sandy beach surface with soft natural lighting" width="400" height="500" src="/assets/site-lookbook-highlights-image-1.webp" alt="פרט הדפס גל טורקיז על חולצת גלישה">
+        </div>
+        
+        <div class="lookbook-highlight-image-wrapper">
+          <img data-placeholder="lookbook-highlights-image-2" data-context="Lifestyle shot of a surfer wearing a cream-colored t-shirt with sunset gradient coastline print, standing on a beach at golden hour holding a surfboard, ocean waves in background, natural adventure photography style" width="400" height="500" src="/assets/site-lookbook-highlights-image-2.webp" alt="גולש לובש חולצה עם הדפס חוף שקיעה">
+        </div>
+        
+        <div class="lookbook-highlight-image-wrapper">
+          <img data-placeholder="lookbook-highlights-image-3" data-context="Detail shot of a gray t-shirt with vintage map-style geographic coordinates print showing surf spot locations like Sri Lanka and Sinai, with compass rose and topographic line details, photographed on weathered wood surface" width="400" height="500" src="/assets/site-lookbook-highlights-image-3.webp" alt="פרט הדפס קואורדינטות ספוטי גלישה">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="lookbook-highlights-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,30 Q100,28 200,32 T400,28 Q500,32 600,28 T800,32 Q900,28 1000,32 T1200,30 L1200,60 Z" fill="var(--bg-light)" stroke="var(--border-dark)" stroke-width="1" stroke-dasharray="8,6" stroke-linecap="round"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="lookbook-specs-section" data-layout-spec="לוקבוק-specs">
+  <div class="lookbook-specs-container">
+    <div class="lookbook-specs-header">
+      <h2>מפרט טכני ושטח</h2>
+      <p>כל מה שצריך לדעת לפני שיוצאים לגלים. נבנה על ידי גולשים, עבור גולשים.</p>
+    </div>
+
+    <div class="lookbook-specs-main">
+      <div class="lookbook-specs-content">
+        <div class="lookbook-spec-block">
+          <h3>גזרה וישיבה</h3>
+          <p>גזרה רגילה עם חופש תנועה מלא. לא צמודה מדי, לא רחבה מדי — בדיוק איפה שצריך כדי להרגיש נוח על הגלשן ובמים. שרוולים קצרים עם תפרים שטוחים שלא משפשפים.</p>
+        </div>
+
+        <div class="lookbook-spec-block">
+          <h3>תחושת הבד</h3>
+          <p>כותנה 100% בצפיפות 180 גרם למ"ר. נושמת, קלה, מתייבשת מהר. הבד מרגיש רך מהיום הראשון ורק משתפר עם הזמן — ככה אמורה להרגיש חולצת גלישה אמיתית.</p>
+        </div>
+
+        <div class="lookbook-spec-block">
+          <h3>עמידות ההדפס</h3>
+          <p>הדפסה ישירה על בד (DTG) עם דיו איכותי שעובר קיבוע בחום. הצבעים נשארים חדים גם אחרי עשרות כביסות. לא מתקלף, לא נסדק, לא דוהה — הדפס שנשאר איתך לאורך כל העונה.</p>
+        </div>
+
+        <div class="lookbook-spec-block">
+          <h3>ארוז ונוסע</h3>
+          <p>קלה ומתקפלת קטן — מושלמת לתרמיל או לתיק גלישה. לא צריך גיהוץ, לא תופסת הרבה מקום. חולצה אחת לכל יום בטיול, ואפשר לשטוף במקום ולייבש באוויר תוך שעות.</p>
+        </div>
+      </div>
+
+      <aside class="lookbook-specs-legend">
+        <div class="lookbook-legend-title">הערות שטח</div>
+        <div class="lookbook-legend-field">
+          <span class="lookbook-legend-label">כביסה וטיפול:</span>
+          <span class="lookbook-legend-value">מכונה 30°C, ללא אקונומיקה, ייבוש אוויר</span>
+        </div>
+        <div class="lookbook-legend-field">
+          <span class="lookbook-legend-label">התאמה צפויה:</span>
+          <span class="lookbook-legend-value">הבד מתרכך אחרי 2-3 כביסות, גזרה נשארת יציבה</span>
+        </div>
+        <div class="lookbook-legend-field">
+          <span class="lookbook-legend-label">אקלים מומלץ:</span>
+          <span class="lookbook-legend-value">טרופי, ים תיכוני, חוף חם — כל מקום עם שמש וגלים</span>
+        </div>
+        <div class="lookbook-legend-coordinate">35.5°N, 34.9°E — נבדק בשטח</div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="lookbook-specs-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,35 Q100,42 200,38 T400,35 Q500,40 600,36 T800,38 Q900,35 1000,40 T1200,36 L1200,80 Z" fill="var(--bg-light)"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="lookbook-cta-section" data-layout-spec="לוקבוק-cta">
+  <div class="lookbook-cta-container">
+    <div class="lookbook-cta-corner lookbook-cta-corner-top-right"></div>
+    <div class="lookbook-cta-corner lookbook-cta-corner-top-left"></div>
+    <div class="lookbook-cta-corner lookbook-cta-corner-bottom-right"></div>
+    <div class="lookbook-cta-corner lookbook-cta-corner-bottom-left"></div>
+    
+    <div class="lookbook-cta-content">
+      <h2>צריכים עזרה עם מידות או שיתוף פעולה?</h2>
+      <p>יש לכם שאלות לגבי המידות? רוצים להציע שיתוף פעולה או לשתף את הסיפור שלכם עם הקהילה? אנחנו כאן בשבילכם – צרו קשר ונדבר.</p>
+      <a href="/contact" class="lookbook-cta-button">צרו קשר</a>
+    </div>
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-column footer-brand">
+        <img src="/assets/tsababa-bay-wear-logo.webp" alt="Tsababa BAY WEAR" class="logo" />
+        <p class="brand-tagline">אופנה וספורט ימי</p>
+      </div>
+      
+      <div class="footer-column footer-links">
+        <h3 class="footer-heading">קישורים מהירים</h3>
+        <ul class="footer-nav">
+          <li><a href="/brand-story">סיפור המותג</a></li>
+          <li><a href="/lookbook">לוקבוק</a></li>
+          <li><a href="/contact">צור קשר</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column footer-contact">
+        <h3 class="footer-heading">יצירת קשר</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-envelope"></i> <a href="mailto:[business_email]">[business_email]</a></li>
+          <li><i class="fas fa-phone"></i> <a href="tel:[business_phone]">[business_phone]</a></li>
+          <li><a href="/"><i class="fas fa-map-marker-alt"></i> <span>[business_address]</span></a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column footer-social">
+        <h3 class="footer-heading">עקבו אחרינו</h3>
+        <div class="social-links">
+          <a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">© 2026 Tsababa BAY WEAR. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy">מדיניות פרטיות</a>
+          <span class="separator">|</span>
+          <a href="/terms">תנאים והגבלות</a><span class="separator">|</span>
+            <a href="/return-policy" aria-label="מדיניות החזרות">
+              מדיניות החזרות
+            </a>
+          <span class="separator">|</span>
+          <a href="/accessibility">נגישות</a>
+          <span class="separator">|</span>
+          <a href="https://zappy5.com" target="_blank" class="zappy-attribution">Generated by Zappy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+</body>
+</html>

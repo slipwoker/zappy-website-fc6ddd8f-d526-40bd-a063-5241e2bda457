@@ -1,0 +1,79 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+ביגוד גלישה וקייטסרפינג ישראל שמתעד את רוח החופש המוחלטת. חולצות מעוצבות לחובבי גלישה וטיולים עם דימויים של ים טורקיז, חופים וטבע פראי.
+
+### סיפור המותג
+https://example.com/brand-story
+גלו את הסיפור מאחורי המותג שנולד מתוך אהבה לאוקיינוס ולחיים נוודים. ביגוד גלישה אותנטי שחוגג את קהילת הגולשים והרפתקאות בסרי לנקה וסיני.
+
+### לוקבוק
+https://example.com/lookbook
+חולצות מעוצבות לחובבי גלישה וטיולים עם הדפסים של שקיעות עוצרות נשימה וחופים טורקיז. עיצובי POD ייחודיים שמתעדים את רוח ההרפתקה של הגולש הנוודי.
+
+### צור קשר
+https://example.com/contact
+יש לכם שאלות על בגדי ים וגלישה שלנו? רוצים להצטרף לקהילת הגולשים? צרו קשר והפכו לחלק מהמסע. ביגוד גלישה אותנטי לנשמות חופשיות.
+
+### Products
+https://example.com/products
+המוצרים שלנו - Tsababa BAY WEAR
+
+### Cart
+https://example.com/cart
+עגלת הקניות שלך
+
+### Checkout
+https://example.com/checkout
+תשלום
+
+### Login
+https://example.com/login
+התחברות לקוחות
+
+### Account
+https://example.com/account
+החשבון שלי
+
+### Order Success
+https://example.com/order-success
+תודה על ההזמנה
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - Tsababa BAY WEAR
+
+### Category
+https://example.com/category/:slug
+מוצרים - Tsababa BAY WEAR
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt

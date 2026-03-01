@@ -5605,6 +5605,399 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 
 
+
+
+/* Legal Pages Content Styles */
+
+/* Legal Pages Content Styles */
+.legal-page-content {
+  padding: 60px 0;
+  min-height: 60vh;
+}
+
+.legal-page-content .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.legal-page-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.legal-page-content .last-updated {
+  color: #666;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.legal-page-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.legal-page-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.legal-page-content ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+[dir="rtl"] .legal-page-content ul {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+.legal-page-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.legal-page-content .contact-box {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.legal-page-content .contact-box a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.legal-page-content .contact-box a:hover {
+  opacity: 0.8;
+}
+
+
+/* Cookie Consent Styles */
+
+/* Cookie Consent Customizations */
+:root {
+  --cc-btn-primary-bg: #3b82f6;
+  --cc-btn-primary-border: #3b82f6;
+  --cc-btn-primary-hover-bg: #2269dd;
+}
+
+#cc--main {
+  font-family: inherit !important;
+}
+
+.cc-btn.cc--btn-primary {
+  background-color: var(--cc-btn-primary-bg) !important;
+  border-color: var(--cc-btn-primary-border) !important;
+}
+
+.cc-btn.cc--btn-primary:hover {
+  background-color: var(--cc-btn-primary-hover-bg) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #cc--main .cc__btn {
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+  }
+  
+  .cc__modal .cc__modal-content {
+    margin: 10px !important;
+  }
+}
+
+/* Cookie preferences button in footer */
+.cookie-preferences-btn:hover {
+  text-decoration: none !important;
+}
+
+/* Accessibility Styles */
+
+/* Basic Accessibility Enhancements */
+:root {
+  --accessibility-focus: #2F3A3C;
+}
+
+/* Skip link styles */
+.skip-link:focus {
+  position: absolute !important;
+  top: 6px !important;
+  left: 6px !important;
+  background: #000 !important;
+  color: white !important;
+  padding: 8px !important;
+  text-decoration: none !important;
+  z-index: 10000 !important;
+  border-radius: 4px !important;
+}
+
+/* Enhanced focus indicators */
+*:focus {
+  outline: 2px solid var(--accessibility-focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  * {
+    border-color: currentColor !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+/* Custom Accessibility Toolbar Styling - Zappy Style */
+
+/* Main button icon - ONLY target the floating button, not menu elements */
+#mic-access-tool-general-button {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* AGGRESSIVELY hide all text in the button */
+#mic-access-tool-general-button,
+#mic-access-tool-general-button *:not(svg):not(path):not(circle):not(rect):not(polygon):not(ellipse):not(line):not(polyline):not(g) {
+  font-size: 0 !important;
+  color: transparent !important;
+  text-indent: -9999px !important;
+  line-height: 0 !important;
+  letter-spacing: -999em !important;
+  white-space: nowrap !important;
+}
+
+/* Hide text nodes specifically */
+#mic-access-tool-general-button::before,
+#mic-access-tool-general-button::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hover state - keep text hidden */
+#mic-access-tool-general-button:hover {
+  background-color: rgba(47, 58, 60, 0.1) !important;
+  background: rgba(47, 58, 60, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(47, 58, 60, 0.2) !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  text-indent: -9999px !important;
+}
+
+/* Target the SVG and make it the selected color */
+#mic-access-tool-general-button svg {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  /* Convert green to selected color using dynamic CSS filter */
+  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+/* Also directly target all SVG elements to be the selected color */
+#mic-access-tool-general-button svg,
+#mic-access-tool-general-button svg *,
+#mic-access-tool-general-button svg path,
+#mic-access-tool-general-button svg circle,
+#mic-access-tool-general-button svg rect,
+#mic-access-tool-general-button svg polygon,
+#mic-access-tool-general-button svg ellipse,
+#mic-access-tool-general-button svg line,
+#mic-access-tool-general-button svg polyline,
+#mic-access-tool-general-button svg g {
+  fill: #2F3A3C !important;
+  stroke: #2F3A3C !important;
+  color: #2F3A3C !important;
+}
+
+/* Target images if the icon is an img instead of SVG */
+#mic-access-tool-general-button img,
+#mic-access-tool-general-button i {
+  width: 18px !important;
+  height: 18px !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  /* Convert green to selected color using dynamic filter */
+  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+/* Menu header with selected color */
+#mic-access-tool-box .mic-access-tool-box-header,
+.mic-access-tool-box-header,
+div[id*="mic-access-tool-box"] header,
+div[id*="mic-access-tool-box"] .header {
+  background: #2F3A3C !important;
+  color: white !important;
+}
+
+/* Make header text white - title and close button */
+#mic-access-tool-box .mic-access-tool-box-header *,
+.mic-access-tool-box-header *,
+div[id*="mic-access-tool-box"] header *,
+div[id*="mic-access-tool-box"] .header * {
+  color: white !important;
+}
+
+/* Close button text */
+#mic-access-tool-box .mic-access-tool-box-header button,
+#mic-access-tool-box .mic-access-tool-box-header a,
+#mic-access-tool-box [class*="close"],
+#mic-access-tool-box button[title*="close"],
+#mic-access-tool-box button[title*="Close"] {
+  color: white !important;
+  background: transparent !important;
+}
+
+/* Active buttons and highlights in menu */
+#mic-access-tool-box button.active,
+#mic-access-tool-box button:hover,
+div[id*="mic-access-tool-box"] button.active,
+div[id*="mic-access-tool-box"] button:hover {
+  border-color: #2F3A3C !important;
+  color: #2F3A3C !important;
+  background-color: rgba(47, 58, 60, 0.1) !important;
+}
+
+/* Reset button */
+#mic-access-tool-box button[title*="reset"],
+#mic-access-tool-box button[title*="Reset"],
+#mic-access-tool-box [class*="reset"],
+div[id*="mic-access-tool-box"] button[class*="reset"] {
+  background: #2F3A3C !important;
+  color: white !important;
+}
+
+/* Reset button text and icon */
+#mic-access-tool-box button[title*="reset"] *,
+#mic-access-tool-box button[title*="Reset"] *,
+#mic-access-tool-box [class*="reset"] *,
+div[id*="mic-access-tool-box"] button[class*="reset"] * {
+  color: white !important;
+}
+
+/* Hide accessibility widget by default on all screen sizes */
+/* TODO: Can be re-enabled in the future by removing display: none */
+/* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
+/* Target Mickidum accessibility button with high specificity */
+#mic-access-tool-general-button,
+.mic-access-tool-general-button,
+#mic-init-access-tool .mic-access-tool-general-button,
+#mic-init-access-tool #mic-access-tool-general-button,
+._access-icon {
+  display: none !important; /* Hidden by default - can be re-enabled */
+}
+
+/* Target Mickidum accessibility menu with high specificity */
+#mic-access-tool-box,
+.mic-access-tool-box,
+#mic-init-access-tool #mic-access-tool-box,
+div[id*="mic-access-tool-box"],
+._access-menu {
+  display: none !important; /* Hidden by default - can be re-enabled */
+}
+
+/* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
+body.accessibility-widget-visible #mic-access-tool-general-button,
+body.accessibility-widget-visible .mic-access-tool-general-button,
+body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
+body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
+body.accessibility-widget-visible ._access-icon {
+  display: flex !important; /* Show button when visible class is added */
+}
+
+body.accessibility-widget-visible #mic-access-tool-box,
+body.accessibility-widget-visible .mic-access-tool-box,
+body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
+body.accessibility-widget-visible div[id*="mic-access-tool-box"],
+body.accessibility-widget-visible ._access-menu {
+  display: block !important; /* Show menu when visible class is added */
+}
+
+/* On mobile, ensure it stays hidden */
+@media (max-width: 768px) {
+  /* Hide the accessibility button on mobile - higher specificity */
+  #mic-access-tool-general-button,
+  .mic-access-tool-general-button,
+  #mic-init-access-tool .mic-access-tool-general-button,
+  #mic-init-access-tool #mic-access-tool-general-button,
+  ._access-icon {
+    display: none !important; /* Hidden on mobile - can be re-enabled */
+  }
+  
+  /* Hide the accessibility menu on mobile - higher specificity */
+  #mic-access-tool-box,
+  .mic-access-tool-box,
+  #mic-init-access-tool #mic-access-tool-box,
+  div[id*="mic-access-tool-box"],
+  ._access-menu {
+    display: none !important; /* Hidden on mobile - can be re-enabled */
+  }
+  
+  /* Ensure mobile never shows widget even with keyboard shortcut */
+  body.accessibility-widget-visible #mic-access-tool-general-button,
+  body.accessibility-widget-visible .mic-access-tool-general-button,
+  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
+  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
+  body.accessibility-widget-visible ._access-icon,
+  body.accessibility-widget-visible #mic-access-tool-box,
+  body.accessibility-widget-visible .mic-access-tool-box,
+  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
+  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
+  body.accessibility-widget-visible ._access-menu {
+    display: none !important;
+  }
+}
+
+
+
+
+
 /* ==ZAPPY V2 E-COMMERCE THEME CSS== */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 /* V2 E-COMMERCE CSS - Clean V2 Variables Only                                  */
@@ -7858,6 +8251,17 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
 
 /* Mobile-specific nav styles */
 @media (max-width: 768px) {
+  /* Mobile nav panel must have an opaque background; the refresh script doesn't
+     re-run navbarCssHelper/colorPaletteService which normally sets this.
+     When --nav-bg is transparent, we use the solid palette bg instead. */
+  .nav-menu,
+  .nav-menu.active,
+  .nav-menu.nav-menu-active,
+  #navMenu,
+  #navMenu.active {
+    background-color: var(--nav-bg, var(--bg-light)) !important;
+  }
+
   /* Ensure hamburger is visible on mobile e-commerce pages.
      Some generated navbars accidentally ship ".mobile-toggle { display:none; }" without a media query.
      Color is NOT set here — navbarLayoutFixService determines the correct color
@@ -7954,11 +8358,14 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
   /* Hide catalog menu on mobile */
   .zappy-catalog-menu { display: none !important; }
   
-  /* Left icons group (Login, Cart) - 20px margin to prevent cutoff in iframes */
+  /* Left icons group (Login, Cart) - positioned at inline-end edge of .nav-container */
   .nav-icons-left {
     order: 2 !important;
     position: absolute !important;
-    left: 20px !important;
+    left: unset !important;
+    right: unset !important;
+    inset-inline-end: 0px !important;
+    inset-inline-start: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     z-index: 100 !important;
@@ -7976,17 +8383,28 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
     gap: 10px !important;
   }
   
-  /* Right icons group (Search) - positioned with proper gap from hamburger */
-  /* Hamburger is 36px wide at 12px from edge → ends at 48px; add 10px gap = 58px */
+  /* Right icons group (Search) - positioned near hamburger menu.
+     Hamburger is 36px at 12px from .navbar edge → ends at 48px from .navbar edge.
+     Since .nav-container has 16px padding, 48-16 = 32px from .nav-container edge + 4px gap = 36px */
   .nav-icons-right,
   .nav-ecommerce-icons.nav-icons-right {
     order: 3 !important;
     position: absolute !important;
-    right: 58px !important;
+    left: unset !important;
+    right: unset !important;
+    inset-inline-start: 36px !important;
+    inset-inline-end: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     z-index: 100 !important;
     gap: 2px !important;
+  }
+
+  /* Logo: constrain width so it doesn't get squeezed by icon groups */
+  .logo,
+  .nav-brand img,
+  .nav-brand svg {
+    max-width: 110px !important;
   }
   
   /* Make header relative for absolute children */
@@ -7994,7 +8412,9 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
     position: relative !important;
   }
   
-  /* Mobile nav icon buttons - compact sizing for iframe compatibility */
+  /* Mobile nav icon buttons - sized to match desktop e-commerce standard (36px).
+     ALWAYS use solid bg-light background so icons are visible over any hero (dark or light).
+     Paired with text-dark color below for guaranteed contrast. */
   .cart-link,
   .nav-cart,
   .nav-search-toggle,
@@ -8003,31 +8423,36 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 28px !important;
-    height: 28px !important;
-    min-width: 28px !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
     padding: 0 !important;
     position: relative !important;
     overflow: visible !important;
     border-radius: 9999px !important;
-    border: 1px solid var(--border-light) !important;
-    background: var(--bg-light) !important;
+    border: 1px solid rgba(128,128,128,0.2) !important;
+    background: var(--bg-light, #ffffff) !important;
   }
 
-  /* Icon color: use nav-text which is contrast-checked against nav-bg.
-     Compound selectors beat desktop rules (0-2-0 > 0-1-0). */
+  /* Icon color: always use text-dark on mobile since circles are always bg-light.
+     --nav-text may be white (for transparent navbars) which is invisible on light circles. */
   .cart-link.nav-cart,
   .login-link.nav-login,
   .nav-search-toggle {
-    color: var(--nav-text, var(--text-dark)) !important;
+    color: var(--text-dark, #1a1a1a) !important;
+  }
+  .cart-link.nav-cart svg,
+  .login-link.nav-login svg,
+  .nav-search-toggle svg {
+    stroke: var(--text-dark, #1a1a1a) !important;
   }
 
   /* Mobile nav icon hover */
   .cart-link.nav-cart:hover,
   .login-link.nav-login:hover,
   .nav-search-toggle:hover {
-    background: rgba(128,128,128,0.12) !important;
-    color: var(--nav-text, var(--text-dark)) !important;
+    background: rgba(128,128,128,0.15) !important;
+    color: var(--text-dark, #1a1a1a) !important;
   }
   
   /* Mobile nav SVG icons - consistent size */
@@ -8130,7 +8555,6 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
   }
   
   /* Desktop icon buttons: keep circular + centered (fix square icons regression) */
-  /* CRITICAL: For dark themes, use transparent background so light icons are visible */
   .navbar .nav-ecommerce-icons.nav-icons-left a.login-link.nav-login,
   .navbar .nav-ecommerce-icons.nav-icons-left a.cart-link.nav-cart {
     width: 36px !important;
@@ -8142,8 +8566,8 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
     justify-content: center !important;
     border-radius: 9999px !important;
     border: 1px solid rgba(128,128,128,0.2) !important;
-    background: rgba(128,128,128,0.06) !important;
-    color: var(--nav-text, var(--text-dark)) !important;
+    background: var(--bg-light, #ffffff) !important;
+    color: var(--text-dark, #1a1a1a) !important;
     padding: 0 !important;
     position: relative !important; /* anchor cart badge */
     box-sizing: border-box !important;
@@ -8270,6 +8694,7 @@ html[lang="ar"] .mobile-search-panel .search-wrapper,
   }
 
   /* Products menu: normalize link height so dropdown item doesn't look like “two rows” */
+  .navbar, .nav-container, .nav-menu, .nav-menu > li { overflow: visible !important; }
   .navbar .nav-menu { align-items: center !important; }
   .navbar .nav-menu > li { display: flex !important; align-items: center !important; }
   .navbar .nav-menu > li > a {
@@ -8372,52 +8797,54 @@ body.zappy-focused-page .zappy-announcement-bar {
   direction: rtl !important;
 }
 
-/* Dropdown in catalog menu */
+/* Dropdown in catalog menu - desktop only */
 .zappy-products-dropdown { position: relative; }
-.zappy-products-dropdown .sub-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  min-width: 200px;
-  background: var(--nav-bg, var(--bg-light)) !important;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  padding: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 1000;
-  list-style: none;
-  margin: 0; /* Remove gap to prevent hover issues */
-  padding-top: 12px; /* Visual spacing instead of margin */
-}
-/* Bridge element to prevent submenu from disappearing on hover */
-.zappy-products-dropdown::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  right: 0;
-  height: 10px;
-}
-.zappy-products-dropdown:hover .sub-menu,
-.zappy-products-dropdown:focus-within .sub-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.zappy-products-dropdown .sub-menu a {
-  display: block;
-  padding: 10px 16px;
-  color: var(--nav-text, var(--text-dark));
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
-}
-.zappy-products-dropdown .sub-menu a:hover {
-  background: rgba(128,128,128,0.1) !important;
-  color: var(--nav-text-hover, var(--primary)) !important;
+@media (min-width: 769px) {
+  .zappy-products-dropdown .sub-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: var(--bg-light, #ffffff) !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 100001;
+    list-style: none;
+    margin: 0;
+    padding-top: 12px;
+  }
+  /* Bridge element to prevent submenu from disappearing on hover */
+  .zappy-products-dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+  .zappy-products-dropdown:hover .sub-menu,
+  .zappy-products-dropdown:focus-within .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .zappy-products-dropdown .sub-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--text-dark, #1a1a1a);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+  .zappy-products-dropdown .sub-menu a:hover {
+    background: rgba(128,128,128,0.1) !important;
+    color: var(--nav-text-hover, var(--primary)) !important;
+  }
 }
 
 /* V2 Navbar positioning for e-commerce - DO NOT include generic 'header' as it matches content headers */
@@ -8425,6 +8852,7 @@ nav#navbar,
 nav.navbar,
 .navbar:not(.zappy-catalog-menu) {
   z-index: 100000 !important;
+  overflow: visible !important;
 }
 
 /* Announcement bar should be above everything */
@@ -8576,58 +9004,62 @@ main,
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   SUBMENU VISIBILITY FIXES
+   SUBMENU VISIBILITY FIXES (desktop only)
    ───────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 769px) {
+  /* Navbar submenu - always uses solid bg-light background (not nav-bg which may be transparent) */
+  .navbar .sub-menu,
+  .navbar ul.sub-menu,
+  nav.navbar .sub-menu {
+    background: var(--bg-light, #ffffff) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+    margin: 0 !important;
+    padding-top: 12px !important;
+    z-index: 100001 !important;
+    overflow: visible !important;
+  }
+  .navbar .sub-menu li a,
+  nav.navbar .sub-menu li a {
+    color: var(--text-dark, #1a1a1a) !important;
+  }
+  .navbar .sub-menu li a:hover,
+  nav.navbar .sub-menu li a:hover {
+    background: rgba(128,128,128,0.1) !important;
+    color: var(--nav-text-hover, var(--accent, var(--primary))) !important;
+  }
 
-/* Navbar submenu - uses nav background for consistency */
-.navbar .sub-menu,
-.navbar ul.sub-menu,
-nav.navbar .sub-menu {
-  background: var(--nav-bg, var(--bg-light)) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
-  margin: 0 !important;
-  padding-top: 12px !important;
-}
-.navbar .sub-menu li a,
-nav.navbar .sub-menu li a {
-  color: var(--nav-text, var(--text-dark)) !important;
-}
-.navbar .sub-menu li a:hover,
-nav.navbar .sub-menu li a:hover {
-  background: rgba(128,128,128,0.1) !important;
-  color: var(--nav-text-hover, var(--accent, var(--primary))) !important;
-}
+  /* Bridge element to prevent submenu from disappearing on hover */
+  .navbar .menu-item-has-children,
+  nav.navbar .menu-item-has-children,
+  .zappy-products-dropdown {
+    position: relative !important;
+    overflow: visible !important;
+  }
+  .navbar .menu-item-has-children::after,
+  nav.navbar .menu-item-has-children::after,
+  .zappy-products-dropdown::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 10px !important;
+  }
 
-/* Bridge element to prevent submenu from disappearing on hover */
-.navbar .menu-item-has-children,
-nav.navbar .menu-item-has-children,
-.zappy-products-dropdown {
-  position: relative !important;
-}
-.navbar .menu-item-has-children::after,
-nav.navbar .menu-item-has-children::after,
-.zappy-products-dropdown::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: -10px !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 10px !important;
-}
-
-/* Catalog dropdown submenu */
-.zappy-products-dropdown .sub-menu {
-  background: var(--nav-bg, var(--bg-light)) !important;
-  margin: 0 !important;
-  padding-top: 12px !important;
-}
-.zappy-products-dropdown .sub-menu a {
-  color: var(--nav-text, var(--text-dark)) !important;
-}
-.zappy-products-dropdown .sub-menu a:hover {
-  background: rgba(128,128,128,0.1) !important;
-  color: var(--nav-text-hover, var(--accent, var(--primary))) !important;
+  /* Catalog dropdown submenu */
+  .zappy-products-dropdown .sub-menu {
+    background: var(--bg-light, #ffffff) !important;
+    margin: 0 !important;
+    padding-top: 12px !important;
+  }
+  .zappy-products-dropdown .sub-menu a {
+    color: var(--text-dark, #1a1a1a) !important;
+  }
+  .zappy-products-dropdown .sub-menu a:hover {
+    background: rgba(128,128,128,0.1) !important;
+    color: var(--nav-text-hover, var(--accent, var(--primary))) !important;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -8667,22 +9099,27 @@ nav.navbar .menu-item-has-children::after,
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
     padding: 0 !important;
     position: relative !important;
     overflow: visible !important;
     border-radius: 9999px !important;
-    border: 1px solid var(--border-light) !important;
-    background: var(--bg-light) !important;
+    border: 1px solid rgba(128,128,128,0.2) !important;
+    background: var(--bg-light, #ffffff) !important;
   }
 
-  /* Icon color: use nav-text for consistency with navbar theme */
+  /* Icon color: always use text-dark on mobile since circles are always bg-light. */
   .cart-link.nav-cart,
   .login-link.nav-login,
   .nav-search-toggle {
-    color: var(--nav-text, var(--text-dark)) !important;
+    color: var(--text-dark, #1a1a1a) !important;
+  }
+  .cart-link.nav-cart svg,
+  .login-link.nav-login svg,
+  .nav-search-toggle svg {
+    stroke: var(--text-dark, #1a1a1a) !important;
   }
   
   .cart-link svg,
@@ -8713,6 +9150,101 @@ nav.navbar .menu-item-has-children::after,
   .cart-count {
     background: var(--accent, #FF2DAA) !important;
     color: #fff !important;
+  }
+
+  /* Disable hover-triggered sub-menus on mobile — only toggle via click */
+  .navbar .zappy-products-dropdown:hover > .sub-menu,
+  .navbar .zappy-products-dropdown:focus-within > .sub-menu,
+  .navbar .menu-item-has-children:hover > .sub-menu,
+  .zappy-products-dropdown:hover > .sub-menu,
+  .zappy-products-dropdown:focus-within > .sub-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    max-height: 0 !important;
+  }
+  /* Re-enable when explicitly expanded via toggle click */
+  .navbar .zappy-products-dropdown .sub-menu.mobile-expanded,
+  .navbar .zappy-products-dropdown > .sub-menu.mobile-expanded,
+  .zappy-products-dropdown .sub-menu.mobile-expanded,
+  .navbar .menu-item-has-children > .sub-menu.mobile-expanded {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    max-height: 500px !important;
+  }
+
+  /* Mobile sub-menu: displayed inline inside dark nav panel, NOT as a floating dropdown.
+     Override the desktop rules that force bg-light + text-dark on sub-menus. */
+  .navbar .sub-menu,
+  .navbar ul.sub-menu,
+  nav.navbar .sub-menu,
+  .zappy-products-dropdown .sub-menu {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    transition: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    z-index: auto !important;
+  }
+  .navbar .sub-menu li a,
+  nav.navbar .sub-menu li a,
+  .zappy-products-dropdown .sub-menu a {
+    color: var(--nav-text, var(--text-dark)) !important;
+    padding: 10px 16px !important;
+    border-radius: 0 !important;
+  }
+  .navbar .sub-menu li a:hover,
+  nav.navbar .sub-menu li a:hover,
+  .zappy-products-dropdown .sub-menu a:hover {
+    background: transparent !important;
+    color: var(--nav-text, var(--text-dark)) !important;
+  }
+
+  /* Mobile submenu toggle arrow: flex child that stretches to match the nav-link height
+     via align-self:stretch, so the arrow centers automatically via align-items:center. */
+  .navbar .nav-menu .mobile-submenu-toggle,
+  .navbar .mobile-submenu-toggle,
+  .mobile-submenu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: auto !important;
+    position: static !important;
+    flex-shrink: 0 !important;
+    align-self: stretch !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+    color: var(--nav-text, var(--text-dark)) !important;
+  }
+  .mobile-submenu-toggle::after {
+    content: '' !important;
+    display: block !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 6px solid transparent !important;
+    border-right: 6px solid transparent !important;
+    border-top: 7px solid currentColor !important;
+    transition: transform 0.3s ease !important;
+  }
+  .mobile-submenu-toggle.expanded::after {
+    transform: rotate(180deg) !important;
   }
 }
 
@@ -9143,393 +9675,6 @@ nav.navbar .menu-item-has-children::after,
 }
 
 /* ==END ZAPPY V2 E-COMMERCE THEME CSS== */
-
-/* Legal Pages Content Styles */
-
-/* Legal Pages Content Styles */
-.legal-page-content {
-  padding: 60px 0;
-  min-height: 60vh;
-}
-
-.legal-page-content .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.legal-page-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: inherit;
-}
-
-.legal-page-content .last-updated {
-  color: #666;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.legal-page-content h2 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: inherit;
-}
-
-.legal-page-content p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-.legal-page-content ul {
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
-}
-
-[dir="rtl"] .legal-page-content ul {
-  padding-left: 0;
-  padding-right: 1.5rem;
-}
-
-.legal-page-content li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
-}
-
-.legal-page-content .contact-box {
-  background: rgba(0, 0, 0, 0.03);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 1.5rem;
-}
-
-.legal-page-content .contact-box a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.legal-page-content .contact-box a:hover {
-  opacity: 0.8;
-}
-
-
-/* Cookie Consent Styles */
-
-/* Cookie Consent Customizations */
-:root {
-  --cc-btn-primary-bg: #3b82f6;
-  --cc-btn-primary-border: #3b82f6;
-  --cc-btn-primary-hover-bg: #2269dd;
-}
-
-#cc--main {
-  font-family: inherit !important;
-}
-
-.cc-btn.cc--btn-primary {
-  background-color: var(--cc-btn-primary-bg) !important;
-  border-color: var(--cc-btn-primary-border) !important;
-}
-
-.cc-btn.cc--btn-primary:hover {
-  background-color: var(--cc-btn-primary-hover-bg) !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #cc--main .cc__btn {
-    font-size: 14px !important;
-    padding: 8px 16px !important;
-  }
-  
-  .cc__modal .cc__modal-content {
-    margin: 10px !important;
-  }
-}
-
-/* Cookie preferences button in footer */
-.cookie-preferences-btn:hover {
-  text-decoration: none !important;
-}
-
-/* Accessibility Styles */
-
-/* Basic Accessibility Enhancements */
-:root {
-  --accessibility-focus: #2F3A3C;
-}
-
-/* Skip link styles */
-.skip-link:focus {
-  position: absolute !important;
-  top: 6px !important;
-  left: 6px !important;
-  background: #000 !important;
-  color: white !important;
-  padding: 8px !important;
-  text-decoration: none !important;
-  z-index: 10000 !important;
-  border-radius: 4px !important;
-}
-
-/* Enhanced focus indicators */
-*:focus {
-  outline: 2px solid var(--accessibility-focus) !important;
-  outline-offset: 2px !important;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  * {
-    border-color: currentColor !important;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Screen reader only content */
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-
-/* Custom Accessibility Toolbar Styling - Zappy Style */
-
-/* Main button icon - ONLY target the floating button, not menu elements */
-#mic-access-tool-general-button {
-  background-color: transparent !important;
-  background: transparent !important;
-  border: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  line-height: 0 !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-/* AGGRESSIVELY hide all text in the button */
-#mic-access-tool-general-button,
-#mic-access-tool-general-button *:not(svg):not(path):not(circle):not(rect):not(polygon):not(ellipse):not(line):not(polyline):not(g) {
-  font-size: 0 !important;
-  color: transparent !important;
-  text-indent: -9999px !important;
-  line-height: 0 !important;
-  letter-spacing: -999em !important;
-  white-space: nowrap !important;
-}
-
-/* Hide text nodes specifically */
-#mic-access-tool-general-button::before,
-#mic-access-tool-general-button::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Hover state - keep text hidden */
-#mic-access-tool-general-button:hover {
-  background-color: rgba(47, 58, 60, 0.1) !important;
-  background: rgba(47, 58, 60, 0.1) !important;
-  box-shadow: 0 2px 8px rgba(47, 58, 60, 0.2) !important;
-  font-size: 0 !important;
-  color: transparent !important;
-  text-indent: -9999px !important;
-}
-
-/* Target the SVG and make it the selected color */
-#mic-access-tool-general-button svg {
-  width: 18px !important;
-  height: 18px !important;
-  max-width: 18px !important;
-  max-height: 18px !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  margin: 0 !important;
-  /* Convert green to selected color using dynamic CSS filter */
-  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
-}
-
-/* Also directly target all SVG elements to be the selected color */
-#mic-access-tool-general-button svg,
-#mic-access-tool-general-button svg *,
-#mic-access-tool-general-button svg path,
-#mic-access-tool-general-button svg circle,
-#mic-access-tool-general-button svg rect,
-#mic-access-tool-general-button svg polygon,
-#mic-access-tool-general-button svg ellipse,
-#mic-access-tool-general-button svg line,
-#mic-access-tool-general-button svg polyline,
-#mic-access-tool-general-button svg g {
-  fill: #2F3A3C !important;
-  stroke: #2F3A3C !important;
-  color: #2F3A3C !important;
-}
-
-/* Target images if the icon is an img instead of SVG */
-#mic-access-tool-general-button img,
-#mic-access-tool-general-button i {
-  width: 18px !important;
-  height: 18px !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  /* Convert green to selected color using dynamic filter */
-  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
-}
-
-/* Menu header with selected color */
-#mic-access-tool-box .mic-access-tool-box-header,
-.mic-access-tool-box-header,
-div[id*="mic-access-tool-box"] header,
-div[id*="mic-access-tool-box"] .header {
-  background: #2F3A3C !important;
-  color: white !important;
-}
-
-/* Make header text white - title and close button */
-#mic-access-tool-box .mic-access-tool-box-header *,
-.mic-access-tool-box-header *,
-div[id*="mic-access-tool-box"] header *,
-div[id*="mic-access-tool-box"] .header * {
-  color: white !important;
-}
-
-/* Close button text */
-#mic-access-tool-box .mic-access-tool-box-header button,
-#mic-access-tool-box .mic-access-tool-box-header a,
-#mic-access-tool-box [class*="close"],
-#mic-access-tool-box button[title*="close"],
-#mic-access-tool-box button[title*="Close"] {
-  color: white !important;
-  background: transparent !important;
-}
-
-/* Active buttons and highlights in menu */
-#mic-access-tool-box button.active,
-#mic-access-tool-box button:hover,
-div[id*="mic-access-tool-box"] button.active,
-div[id*="mic-access-tool-box"] button:hover {
-  border-color: #2F3A3C !important;
-  color: #2F3A3C !important;
-  background-color: rgba(47, 58, 60, 0.1) !important;
-}
-
-/* Reset button */
-#mic-access-tool-box button[title*="reset"],
-#mic-access-tool-box button[title*="Reset"],
-#mic-access-tool-box [class*="reset"],
-div[id*="mic-access-tool-box"] button[class*="reset"] {
-  background: #2F3A3C !important;
-  color: white !important;
-}
-
-/* Reset button text and icon */
-#mic-access-tool-box button[title*="reset"] *,
-#mic-access-tool-box button[title*="Reset"] *,
-#mic-access-tool-box [class*="reset"] *,
-div[id*="mic-access-tool-box"] button[class*="reset"] * {
-  color: white !important;
-}
-
-/* Hide accessibility widget by default on all screen sizes */
-/* TODO: Can be re-enabled in the future by removing display: none */
-/* The widget can be shown via ALT+A keyboard shortcut (desktop only) */
-/* Target Mickidum accessibility button with high specificity */
-#mic-access-tool-general-button,
-.mic-access-tool-general-button,
-#mic-init-access-tool .mic-access-tool-general-button,
-#mic-init-access-tool #mic-access-tool-general-button,
-._access-icon {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
-
-/* Target Mickidum accessibility menu with high specificity */
-#mic-access-tool-box,
-.mic-access-tool-box,
-#mic-init-access-tool #mic-access-tool-box,
-div[id*="mic-access-tool-box"],
-._access-menu {
-  display: none !important; /* Hidden by default - can be re-enabled */
-}
-
-/* Show accessibility widget when ALT+A keyboard shortcut is used (desktop only) */
-body.accessibility-widget-visible #mic-access-tool-general-button,
-body.accessibility-widget-visible .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-body.accessibility-widget-visible ._access-icon {
-  display: flex !important; /* Show button when visible class is added */
-}
-
-body.accessibility-widget-visible #mic-access-tool-box,
-body.accessibility-widget-visible .mic-access-tool-box,
-body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-body.accessibility-widget-visible ._access-menu {
-  display: block !important; /* Show menu when visible class is added */
-}
-
-/* On mobile, ensure it stays hidden */
-@media (max-width: 768px) {
-  /* Hide the accessibility button on mobile - higher specificity */
-  #mic-access-tool-general-button,
-  .mic-access-tool-general-button,
-  #mic-init-access-tool .mic-access-tool-general-button,
-  #mic-init-access-tool #mic-access-tool-general-button,
-  ._access-icon {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
-  
-  /* Hide the accessibility menu on mobile - higher specificity */
-  #mic-access-tool-box,
-  .mic-access-tool-box,
-  #mic-init-access-tool #mic-access-tool-box,
-  div[id*="mic-access-tool-box"],
-  ._access-menu {
-    display: none !important; /* Hidden on mobile - can be re-enabled */
-  }
-  
-  /* Ensure mobile never shows widget even with keyboard shortcut */
-  body.accessibility-widget-visible #mic-access-tool-general-button,
-  body.accessibility-widget-visible .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool .mic-access-tool-general-button,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-general-button,
-  body.accessibility-widget-visible ._access-icon,
-  body.accessibility-widget-visible #mic-access-tool-box,
-  body.accessibility-widget-visible .mic-access-tool-box,
-  body.accessibility-widget-visible #mic-init-access-tool #mic-access-tool-box,
-  body.accessibility-widget-visible div[id*="mic-access-tool-box"],
-  body.accessibility-widget-visible ._access-menu {
-    display: none !important;
-  }
-}
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */

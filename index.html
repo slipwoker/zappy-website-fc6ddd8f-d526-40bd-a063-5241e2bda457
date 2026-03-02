@@ -1491,15 +1491,18 @@
   
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" style="opacity: 1;" id="zappy-section-0">
+    <section class="index-hero-section" data-layout-spec="בית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" style="opacity: 1; position: relative; overflow: hidden; --zappy-bg-overlay: rgba(0, 0, 0, 0)" id="zappy-section-0" data-zappy-bg-type="video" data-zappy-bg-color="" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="0" data-zappy-bg-video-type="upload" data-zappy-bg-video-url="assets/hero-video------------2026-03-02-132821-1772450925230.mp4"><div class="zappy-section-video-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"><div class="zappy-section-video-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(0, 0, 0, 0);pointer-events:none;"></div><video class="zappy-section-video" autoplay="" muted="" loop="" playsinline="" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%, -50%);object-fit:cover;z-index:0;">
+  <source src="/assets/hero-video------------2026-03-02-132821-1772450925230.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
   <!-- Hero Background Image -->
-  <div class="hero-bg-wrapper" style="background-image: url('assets/business-general-hero-upload-1772307827135.webp');  background-size: cover; background-position: center;"></div>
+  <div class="hero-bg-wrapper" style="background-image: url('assets/business-general-hero-upload-1772307827135.webp'); background-size: cover; background-position: center; position: relative; z-index: 2"></div>
   
   <!-- Scrim Overlay for Text Legibility -->
-  <div class="hero-scrim"></div>
+  <div class="hero-scrim" style="display: none" data-zappy-original-bg="hidden"></div>
   
   <!-- Hero Content Overlay -->
-  <div class="hero-content-wrapper" style="text-align: right">
+  <div class="hero-content-wrapper" style="text-align: right; position: relative; z-index: 2">
     <div class="hero-content">
       <!-- Coordinate Label (Top) -->
       <div class="coordinate-label">
@@ -1531,7 +1534,7 @@
   </div>
   
   <!-- Bottom Divider (Torn Paper Edge) -->
-  <div class="index-hero-divider-wrapper">
+  <div class="index-hero-divider-wrapper" style="position: relative; z-index: 2">
     <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 80" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,80 L0,42 Q30,38 60,45 T120,40 Q150,42 180,38 T240,43 Q270,39 300,44 T360,41 Q390,43 420,39 T480,42 Q510,40 540,44 T600,39 Q630,42 660,40 T720,43 Q750,41 780,44 T840,40 Q870,42 900,39 T960,43 Q990,41 1020,44 T1080,40 Q1110,42 1140,39 T1200,42 L1200,80 Z" fill="var(--bg-light)"></path>
     </svg>

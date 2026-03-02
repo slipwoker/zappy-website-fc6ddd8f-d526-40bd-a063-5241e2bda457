@@ -10414,6 +10414,287 @@ main,
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (בית-hero)
+   Added: 2026-03-02T11:33:55.848Z
+   ═══════════════════════════════════════════════════════════ */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A5F66;
+  padding-bottom: 60px;
+}
+
+/* Background Image Layer */
+.index-hero-section .hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.index-hero-section .hero-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Scrim Overlay - Gradient from bottom-right to top-left for RTL */
+.index-hero-section .hero-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26,95,102,0.85) 0%, rgba(15,63,69,0.75) 35%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content Overlay */
+.index-hero-section .hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  direction: rtl;
+}
+
+.index-hero-section .hero-content {
+  max-width: 720px;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Coordinate Label */
+.index-hero-section .hero-coordinate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  opacity: 0.85;
+  margin-bottom: 24px;
+  padding: 8px 14px;
+  border: 1px solid rgba(247,245,238,0.35);
+  border-radius: 2px;
+  background: rgba(26,95,102,0.4);
+  backdrop-filter: blur(4px);
+}
+
+.index-hero-section .hero-coordinate svg {
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+/* Main Headline */
+.index-hero-section .hero-headline {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin: 0 0 28px 0;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Subtitle */
+.index-hero-section .hero-subtitle {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--text-light);
+  margin: 0 0 40px 0;
+  max-width: 580px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.25);
+  opacity: 0.95;
+}
+
+/* CTA Button Group */
+.index-hero-section .hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  direction: rtl;
+}
+
+.index-hero-section .hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 220ms ease;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.index-hero-section .hero-btn-primary {
+  background: var(--primary);
+  color: var(--text-light);
+  border-color: rgba(247,245,238,0.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.index-hero-section .hero-btn-primary:hover {
+  background: #4A7A77;
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.index-hero-section .hero-btn-secondary {
+  background: transparent;
+  color: var(--text-light);
+  border-color: rgba(247,245,238,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.index-hero-section .hero-btn-secondary:hover {
+  background: rgba(247,245,238,0.15);
+  border-color: rgba(247,245,238,0.85);
+  transform: translateY(-2px);
+}
+
+/* Decorative Map Corner */
+.index-hero-section .hero-map-corner {
+  position: absolute;
+  top: 100px;
+  right: 32px;
+  z-index: 8;
+  color: var(--text-light);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Bottom Divider */
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .index-hero-section .hero-headline {
+    font-size: 44px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .index-hero-section .hero-map-corner {
+    top: 90px;
+    right: 24px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+  
+  .index-hero-section .hero-content-wrapper {
+    padding: 100px 16px 0 16px;
+  }
+  
+  .index-hero-section .hero-content {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .index-hero-section .hero-coordinate {
+    font-size: 10px;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+  }
+  
+  .index-hero-section .hero-coordinate svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .index-hero-section .hero-headline {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 100%;
+  }
+  
+  .index-hero-section .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .index-hero-section .hero-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 11px;
+  }
+  
+  .index-hero-section .hero-map-corner {
+    display: none;
+  }
+  
+  .index-hero-section .index-hero-divider-wrapper {
+    height: 50px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .index-hero-section .hero-headline {
+    font-size: 32px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 14px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */

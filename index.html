@@ -1406,6 +1406,286 @@
   }
 }
 </style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A5F66;
+  padding-bottom: 60px;
+}
+
+/* Background Image Layer */
+.index-hero-section .hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.index-hero-section .hero-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Scrim Overlay - Gradient from bottom-right to top-left for RTL */
+.index-hero-section .hero-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26,95,102,0.85) 0%, rgba(15,63,69,0.75) 35%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content Overlay */
+.index-hero-section .hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  direction: rtl;
+}
+
+.index-hero-section .hero-content {
+  max-width: 720px;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Coordinate Label */
+.index-hero-section .hero-coordinate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  opacity: 0.85;
+  margin-bottom: 24px;
+  padding: 8px 14px;
+  border: 1px solid rgba(247,245,238,0.35);
+  border-radius: 2px;
+  background: rgba(26,95,102,0.4);
+  backdrop-filter: blur(4px);
+}
+
+.index-hero-section .hero-coordinate svg {
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+/* Main Headline */
+.index-hero-section .hero-headline {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin: 0 0 28px 0;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Subtitle */
+.index-hero-section .hero-subtitle {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--text-light);
+  margin: 0 0 40px 0;
+  max-width: 580px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.25);
+  opacity: 0.95;
+}
+
+/* CTA Button Group */
+.index-hero-section .hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  direction: rtl;
+}
+
+.index-hero-section .hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 220ms ease;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.index-hero-section .hero-btn-primary {
+  background: var(--primary);
+  color: var(--text-light);
+  border-color: rgba(247,245,238,0.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.index-hero-section .hero-btn-primary:hover {
+  background: #4A7A77;
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.index-hero-section .hero-btn-secondary {
+  background: transparent;
+  color: var(--text-light);
+  border-color: rgba(247,245,238,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.index-hero-section .hero-btn-secondary:hover {
+  background: rgba(247,245,238,0.15);
+  border-color: rgba(247,245,238,0.85);
+  transform: translateY(-2px);
+}
+
+/* Decorative Map Corner */
+.index-hero-section .hero-map-corner {
+  position: absolute;
+  top: 100px;
+  right: 32px;
+  z-index: 8;
+  color: var(--text-light);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Bottom Divider */
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .index-hero-section .hero-headline {
+    font-size: 44px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .index-hero-section .hero-map-corner {
+    top: 90px;
+    right: 24px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+  
+  .index-hero-section .hero-content-wrapper {
+    padding: 100px 16px 0 16px;
+  }
+  
+  .index-hero-section .hero-content {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .index-hero-section .hero-coordinate {
+    font-size: 10px;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+  }
+  
+  .index-hero-section .hero-coordinate svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .index-hero-section .hero-headline {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 100%;
+  }
+  
+  .index-hero-section .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .index-hero-section .hero-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 11px;
+  }
+  
+  .index-hero-section .hero-map-corner {
+    display: none;
+  }
+  
+  .index-hero-section .index-hero-divider-wrapper {
+    height: 50px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .index-hero-section .hero-headline {
+    font-size: 32px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 14px;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-widget-visibility">
@@ -1424,10 +1704,10 @@
       <div class="search-wrapper">
         <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
         <button class="search-submit" id="mobile-search-submit" title="חיפוש">
-          <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
         </button>
         <button class="close-search" id="close-mobile-search">
-          <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
         </button>
       </div>
       <div class="search-results" id="mobile-search-results"></div>
@@ -1436,16 +1716,16 @@
 <script>window.ZAPPY_WEBSITE_ID = "fc6ddd8f-d526-40bd-a063-5241e2bda457";window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview') ? "https://api.zappy5.com" : "https://api.zappy5.com");</script>
   <nav class="navbar" dir="rtl">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call">
-    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -1460,7 +1740,7 @@
     <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">בית</a></li><li class="menu-item-has-children zappy-products-dropdown">
       <a href="/products">
         מוצרים
-        <svg class="dropdown-arrow" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M6 9l6 6 6-6"></path>
         </svg>
       </a>
@@ -1468,13 +1748,13 @@
         <li><a href="/products">כל המוצרים</a></li>
         <!-- Categories will be loaded dynamically -->
       </ul>
-    </li><li><a href="/brand-story">סיפור המותג</a></li><li><a href="/lookbook">לוקבוק</a></li><li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></a><div class="nav-search-box">
+    </li><li><a href="/brand-story">סיפור המותג</a></li><li><a href="/lookbook">לוקבוק</a></li><li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></a><div class="nav-search-box">
     <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
     <button class="nav-search-btn" id="nav-search-btn" title="חיפוש">
-      <svg class="search-icon" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
     </button>
     <div class="nav-search-results" id="nav-search-results"></div>
-  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg></button></div>
+  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg></button></div>
     
     
   </div>
@@ -1491,52 +1771,53 @@
   
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" style="opacity: 1; position: relative; overflow: hidden; --zappy-bg-overlay: rgba(0, 0, 0, 0.52); --zappy-bg-color: #A7D6CC" id="zappy-section-0" data-zappy-bg-type="video" data-zappy-bg-color="" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="52" data-zappy-bg-video-type="upload" data-zappy-bg-video-url="assets/hero-video------------2026-03-02-132821-1772451132862.mp4"><div class="zappy-section-video-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"><div class="zappy-section-video-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(0, 0, 0, 0.52);pointer-events:none;"></div><video class="zappy-section-video" autoplay="" muted="" loop="" playsinline="" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%, -50%);object-fit:cover;z-index:0;">
-  <source src="/assets/hero-video------------2026-03-02-132821-1772451132862.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video></div>
-  <!-- Hero Background Image -->
-  <div class="hero-bg-wrapper" style="background-image: url('assets/business-general-hero-upload-1772307827135.webp'); background-size: cover; background-position: center; position: relative; z-index: 2"></div>
-  
-  <!-- Scrim Overlay for Text Legibility -->
-  <div class="hero-scrim" style="display: none" data-zappy-original-bg="hidden"></div>
-  
-  <!-- Hero Content Overlay -->
-  <div class="hero-content-wrapper" style="text-align: right; position: relative; z-index: 2">
+    <section class="index-hero-section" data-layout-spec="בית-hero" data-hero-type="text-only" data-zappy-section="true">
+  <!-- Background Image -->
+  <div class="hero-bg-wrapper">
+    <div class="hero-bg" style="background-image: url('assets/business-general-hero-upload-1772307827135.webp');  background-size: cover; background-position: center;"></div>
+  </div>
+
+  <!-- Scrim Overlay -->
+  <div class="hero-scrim"></div>
+
+  <!-- Content Overlay -->
+  <div class="hero-content-wrapper">
     <div class="hero-content">
-      <!-- Coordinate Label (Top) -->
-      <div class="coordinate-label">
-        <span class="coordinate-text">N 06° / E 80°</span>
-      </div>
-      
-      <!-- Main Headline -->
-      <h1 class="hero-headline" style="text-align: right;">בין הסשן של הבוקר<br>לבירה של השקיעה.</h1>
-      
-      <!-- Supporting Subtitle -->
-      
-      
-      <!-- CTA Buttons -->
-      <h3 class="hero-subtitle" style="text-align: right;" data-element-id="move-1772450498847-xxsf2310">אנחנו לא עושים אופנה, אנחנו עושים מזכרות מרגעים של חופש. כל חולצה היא סיפור שנכתב על הרוח והודפס בשביל הקהילה שלנו.</h3><div class="hero-cta-group">
-        <a href="/lookbook" class="btn-primary-hero" data-element-type="button" data-element-id="btn-1772450486433-gvrumoi0n" data-native-element="true">גלו את הקולקציה</a>
-        <a href="/contact" class="btn-secondary-hero" data-element-type="button" data-element-id="btn-1772450486433-fc5lp2qq1" data-native-element="true">צרו קשר עם הצוות</a>
-      </div>
-      
-      <!-- Compass Icon (Decorative) -->
-      <div class="compass-icon">
-        <svg data-no-icon-edit="true" aria-hidden="true" width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1" opacity="0.5"></circle>
-          <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1" opacity="0.3"></circle>
-          <path d="M24 6 L24 12 M24 36 L24 42 M6 24 L12 24 M36 24 L42 24" stroke="currentColor" stroke-width="1" opacity="0.5"></path>
-          <path d="M24 10 L27 24 L24 28 L21 24 Z" fill="currentColor" opacity="0.7"></path>
+      <!-- Coordinate Label -->
+      <div class="hero-coordinate" aria-label="מיקום גיאוגרפי">
+        <svg data-no-icon-edit="true" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M8 1 L8 4 M8 12 L8 15 M1 8 L4 8 M12 8 L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
         </svg>
+        <span>N 06° / E 80°</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-headline">בין הסשן של הבוקר<br>לבירה של השקיעה.</h1>
+
+      <!-- Subtitle -->
+      <h3 class="hero-subtitle">אנחנו לא עושים אופנה, אנחנו עושים מזכרות מרגעים של חופש. כל חולצה היא סיפור שנכתב על הרוח והודפס בשביל הקהילה שלנו.</h3>
+
+      <!-- CTA Buttons -->
+      <div class="hero-cta-group">
+        <a href="/lookbook" class="hero-btn hero-btn-primary">גלו את הקולקציה</a>
+        <a href="/contact" class="hero-btn hero-btn-secondary">צרו קשר עם הצוות</a>
       </div>
     </div>
   </div>
-  
-  <!-- Bottom Divider (Torn Paper Edge) -->
-  <div class="index-hero-divider-wrapper" style="position: relative; z-index: 2">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 80" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,42 Q30,38 60,45 T120,40 Q150,42 180,38 T240,43 Q270,39 300,44 T360,41 Q390,43 420,39 T480,42 Q510,40 540,44 T600,39 Q630,42 660,40 T720,43 Q750,41 780,44 T840,40 Q870,42 900,39 T960,43 Q990,41 1020,44 T1080,40 Q1110,42 1140,39 T1200,42 L1200,80 Z" fill="var(--bg-light)"></path>
+
+  <!-- Decorative Map Frame Corner -->
+  <div class="hero-map-corner" aria-hidden="true">
+    <svg data-no-icon-edit="true" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 L0 40 M0 0 L40 0" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path>
+      <path d="M10 10 L10 30 M10 10 L30 10" stroke="currentColor" stroke-width="1" stroke-linecap="square" opacity="0.5"></path>
+    </svg>
+  </div>
+
+  <!-- Bottom Divider Transition -->
+  <div class="index-hero-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,35 Q100,28 200,35 T400,32 Q500,38 600,32 T800,35 Q900,30 1000,35 T1200,32 L1200,60 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 </section>
@@ -1585,7 +1866,7 @@
 
     <div class="index-features-grid zappy-preserve-css-grid" style="display: grid; grid-template-columns: 378.663px 378.663px 378.675px;" id="zappy-auto-grid-1772434674695-y122y3" data-zappy-auto-grid="true" data-original-item-width="379" data-original-gap="32px"><div class="index-features-card">
         <div class="index-features-card-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-element-type="icon" data-icon-type="svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 4L26.5 14H37L28.5 21L31 31L24 25L17 31L19.5 21L11 14H21.5L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"></path>
             <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
           </svg>
@@ -1595,7 +1876,7 @@
         
       </div><div class="index-features-card">
         <div class="index-features-card-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-element-type="icon" data-icon-type="svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 24C8 24 12 16 24 16C36 16 40 24 40 24C40 24 36 32 24 32C12 32 8 24 8 24Z" stroke="currentColor" stroke-width="1.5" fill="none"></path>
             <circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
             <path d="M24 8V12M24 36V40M8 24H12M36 24H40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
@@ -1605,7 +1886,7 @@
         <p class="index-features-card-text">כל גולש אמיתי מכיר: הרגע שאתה נכנס למים, ההליכה אל הספוט, ההרים היפים של הכנרת, או הדג הזה שמחליט שהגלשן שלך נראה טוב שניה לפני הקפיצה.</p>
       </div><div class="index-features-card">
         <div class="index-features-card-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg data-element-type="icon" data-icon-type="svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
             <circle cx="32" cy="16" r="6" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
             <circle cx="24" cy="32" r="6" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
@@ -1665,7 +1946,7 @@
     </div>
   </div>
   
-  <svg class="index-cta-contour-bg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 600" preserveaspectratio="none">
+  <svg class="index-cta-contour-bg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="none">
     <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.08">
       <path d="M-50 120 Q 200 80, 400 120 T 800 120 Q 1000 140, 1250 100"></path>
       <path d="M-50 200 Q 220 160, 420 200 T 820 200 Q 1020 220, 1250 180"></path>

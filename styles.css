@@ -10166,6 +10166,254 @@ main,
 
 /* ==END ZAPPY V2 E-COMMERCE THEME CSS== */
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (בית-hero)
+   Added: 2026-03-02T11:21:24.704Z
+   ═══════════════════════════════════════════════════════════ */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: visible;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding-bottom: 80px;
+}
+
+/* Hero Background Image */
+.index-hero-section .hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Scrim Overlay for Text Legibility */
+.index-hero-section .hero-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.75) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero Content Wrapper */
+.index-hero-section .hero-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 120px 24px 100px;
+}
+
+.index-hero-section .hero-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  direction: rtl;
+}
+
+/* Coordinate Label */
+.index-hero-section .coordinate-label {
+  display: inline-block;
+  margin-bottom: 32px;
+  padding: 8px 16px;
+  background: rgba(243, 241, 234, 0.12);
+  border: 1px solid rgba(247, 245, 238, 0.25);
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.index-hero-section .coordinate-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Hero Headline */
+.index-hero-section .hero-headline {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--text-light);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
+  margin: 0 0 28px 0;
+  text-align: center;
+}
+
+/* Hero Subtitle */
+.index-hero-section .hero-subtitle {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-light);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  margin: 0 auto 40px;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* CTA Button Group */
+.index-hero-section .hero-cta-group {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+/* Primary CTA Button */
+.index-hero-section .btn-primary-hero {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 14px 32px;
+  border-radius: 2px;
+  border: 1px solid rgba(247, 245, 238, 0.3);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  cursor: pointer;
+}
+
+.index-hero-section .btn-primary-hero:hover {
+  background: #4A7A77;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary CTA Button */
+.index-hero-section .btn-secondary-hero {
+  display: inline-block;
+  background: transparent;
+  color: var(--text-light);
+  padding: 14px 32px;
+  border-radius: 2px;
+  border: 1px solid rgba(247, 245, 238, 0.6);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease;
+  cursor: pointer;
+}
+
+.index-hero-section .btn-secondary-hero:hover {
+  background: rgba(247, 245, 238, 0.12);
+  border-color: rgba(247, 245, 238, 0.85);
+  transform: translateY(-2px);
+}
+
+/* Compass Icon (Decorative) */
+.index-hero-section .compass-icon {
+  display: inline-block;
+  color: var(--text-light);
+  opacity: 0.6;
+  animation: compassFloat 4s ease-in-out infinite;
+}
+
+@keyframes compassFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+/* Bottom Divider Wrapper */
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .index-hero-section {
+    height: 100vh;
+    min-height: 600px;
+    padding-bottom: 60px;
+  }
+  
+  .index-hero-section .hero-content-wrapper {
+    padding: 100px 16px 80px;
+  }
+  
+  .index-hero-section .hero-headline {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  
+  .index-hero-section .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+  
+  .index-hero-section .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  
+  .index-hero-section .btn-primary-hero,
+  .index-hero-section .btn-secondary-hero {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 24px;
+    text-align: center;
+  }
+  
+  .index-hero-section .coordinate-label {
+    margin-bottom: 24px;
+  }
+  
+  .index-hero-section .compass-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .index-hero-section .index-hero-divider-wrapper {
+    height: 60px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */

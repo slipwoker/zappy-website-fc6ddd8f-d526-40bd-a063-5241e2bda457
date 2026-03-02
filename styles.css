@@ -9676,6 +9676,204 @@ main,
 
 /* ==END ZAPPY V2 E-COMMERCE THEME CSS== */
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (בית-features)
+   Added: 2026-03-02T06:43:05.058Z
+   ═══════════════════════════════════════════════════════════ */
+.index-features-section {
+  position: relative;
+  background-color: #F3F1EA;
+  background-image: radial-gradient(rgba(31,42,48,0.06) 1px, rgba(0,0,0,0) 1px);
+  background-size: 18px 18px;
+  color: var(--text-dark);
+  padding: 80px 16px;
+  overflow: visible;
+  direction: rtl;
+}
+
+.index-features-section .index-features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.index-features-section .index-features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.index-features-section .index-features-coordinates {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(31,42,48,0.75);
+  margin-bottom: 16px;
+}
+
+.index-features-section .index-features-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: #1E6F73;
+  margin: 0;
+  max-width: 800px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+.index-features-section .index-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.index-features-section .index-features-card {
+  background: #F3F1EA;
+  border-radius: 0px;
+  border: 1px solid rgba(31,42,48,0.18);
+  box-shadow: 0 10px 22px rgba(15,30,35,0.14);
+  padding: 32px;
+  text-align: right;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.index-features-section .index-features-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15,30,35,0.18);
+}
+
+.index-features-section .index-features-card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  margin-inline-start: auto;
+  color: #1E6F73;
+}
+
+.index-features-section .index-features-card-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.index-features-section .index-features-card-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1F2A30;
+  margin: 0 0 16px 0;
+}
+
+.index-features-section .index-features-card-text {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #1F2A30;
+  margin: 0 0 12px 0;
+}
+
+.index-features-section .index-features-card-text:last-child {
+  margin-bottom: 0;
+}
+
+.index-features-section .index-features-specs {
+  background: transparent;
+  border: 1px solid rgba(31,42,48,0.18);
+  border-radius: 0px;
+  padding: 32px;
+}
+
+.index-features-section .index-features-specs-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.index-features-section .index-features-specs-label {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(31,42,48,0.75);
+  white-space: nowrap;
+}
+
+.index-features-section .index-features-specs-divider {
+  flex: 1;
+  height: 1px;
+  background: rgba(31,42,48,0.18);
+}
+
+.index-features-section .index-features-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px 32px;
+}
+
+.index-features-section .index-features-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.index-features-section .index-features-spec-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(31,42,48,0.60);
+}
+
+.index-features-section .index-features-spec-value {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #1F2A30;
+}
+
+@media (max-width: 768px) {
+  .index-features-section {
+    padding: 60px 16px;
+  }
+  
+  .index-features-section .index-features-header {
+    margin-bottom: 40px;
+  }
+  
+  .index-features-section .index-features-title {
+    font-size: 28px;
+  }
+  
+  .index-features-section .index-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  
+  .index-features-section .index-features-card {
+    padding: 24px;
+  }
+  
+  .index-features-section .index-features-specs {
+    padding: 24px;
+  }
+  
+  .index-features-section .index-features-specs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */

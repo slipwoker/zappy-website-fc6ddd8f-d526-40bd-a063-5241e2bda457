@@ -10436,6 +10436,313 @@ main,
   outline-offset: 2px;
 }
 
+/* Added Component Styles */
+/* Featured Products Section */
+.featured-products {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #f8fafa 0%, #ffffff 100%);
+  font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.featured-products__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.featured-products__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.featured-products__title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.featured-products__subtitle {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Product Grid */
+.featured-products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+/* Product Card */
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.product-card--featured {
+  position: relative;
+}
+
+.product-card--featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Image Wrapper */
+.product-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 125%; /* 4:5 aspect ratio */
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.product-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
+}
+
+/* Badge */
+.product-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.product-card__badge--bestseller {
+  background: var(--gradient-primary);
+}
+
+/* Content */
+.product-card__content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-card__name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.product-card__description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Footer */
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.product-card__price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.product-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient-primary);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.product-card__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(95, 143, 139, 0.4);
+}
+
+.product-card__cta:active {
+  transform: translateY(0);
+}
+
+.product-card__cta svg {
+  transition: transform 0.3s ease;
+}
+
+.product-card__cta:hover svg {
+  transform: translateX(-2px);
+}
+
+/* CTA Wrapper */
+.featured-products__cta-wrapper {
+  text-align: center;
+}
+
+.featured-products__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 32px;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.featured-products__view-all:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(95, 143, 139, 0.3);
+}
+
+.featured-products__view-all svg {
+  transition: transform 0.3s ease;
+}
+
+.featured-products__view-all:hover svg {
+  transform: translateX(-4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .featured-products {
+    padding: 60px 16px;
+  }
+
+  .featured-products__header {
+    margin-bottom: 40px;
+  }
+
+  .featured-products__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .product-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-card__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .featured-products__view-all {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products {
+    padding: 40px 12px;
+  }
+
+  .product-card__content {
+    padding: 20px;
+  }
+
+  .product-card__name {
+    font-size: 20px;
+  }
+
+  .product-card__price {
+    font-size: 24px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .product-card__image,
+  .product-card__cta,
+  .featured-products__view-all,
+  .product-card__cta svg,
+  .featured-products__view-all svg {
+    transition: none;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+
+  .product-card:hover .product-card__image {
+    transform: none;
+  }
+}
+
+/* Focus Styles */
+.product-card__cta:focus-visible,
+.featured-products__view-all:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */

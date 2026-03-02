@@ -22,7 +22,7 @@ https://example.com/contact
 
 ### Products
 https://example.com/products
-המוצרים שלנו - Tsababa BAY WEAR
+המוצרים שלנו - TSABABA BAY WEAR
 
 ### Cart
 https://example.com/cart
@@ -46,11 +46,11 @@ https://example.com/order-success
 
 ### Product Detail
 https://example.com/product/:slug
-פרטי המוצר - Tsababa BAY WEAR
+פרטי המוצר - TSABABA BAY WEAR
 
 ### Category
 https://example.com/category/:slug
-מוצרים - Tsababa BAY WEAR
+מוצרים - TSABABA BAY WEAR
 
 ## Legal & Policy
 

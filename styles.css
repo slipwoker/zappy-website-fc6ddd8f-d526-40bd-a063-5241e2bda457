@@ -10695,6 +10695,174 @@ main,
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (סיפור המותג-intro)
+   Added: 2026-03-02T11:56:37.206Z
+   ═══════════════════════════════════════════════════════════ */
+.brand-story-intro-section {
+  background-color: #F3F1EA;
+  background-image: radial-gradient(rgba(31,42,48,0.06) 1px, rgba(0,0,0,0) 1px);
+  background-size: 18px 18px;
+  color: var(--text-dark);
+  padding: 140px 24px 80px;
+  position: relative;
+  overflow: visible;
+  direction: rtl;
+}
+
+.brand-story-intro-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-story-intro-section__content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.brand-story-intro-section__text-content {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-story-intro-section__map-pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(95,143,139,0.12);
+  border-radius: 50%;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.brand-story-intro-section__coordinates {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-bottom: 24px;
+  text-align: right;
+}
+
+.brand-story-intro-section__headline {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--primary);
+  margin: 0 0 24px 0;
+  text-align: right;
+}
+
+.brand-story-intro-section__divider-line {
+  width: 80px;
+  height: 1px;
+  background: var(--border-light);
+  margin: 0 0 32px auto;
+}
+
+.brand-story-intro-section__story-text {
+  position: relative;
+}
+
+.brand-story-intro-section__story-text p {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--text-dark);
+  margin: 0;
+  text-align: right;
+}
+
+.brand-story-intro-section__image-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-story-intro-section__image-frame {
+  position: relative;
+  border: 1px solid rgba(31,42,48,0.18);
+  padding: 12px;
+  background: #F3F1EA;
+  box-shadow: 0 10px 22px rgba(15,30,35,0.14);
+}
+
+.brand-story-intro-section__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.brand-story-intro-section__compass-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  color: #F7F5EE;
+  opacity: 0.85;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+.brand-story-intro-section__topo-decoration {
+  position: absolute;
+  bottom: -40px;
+  right: -60px;
+  width: 200px;
+  height: 140px;
+  color: var(--primary);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .brand-story-intro-section {
+    padding: 100px 16px 60px;
+  }
+
+  .brand-story-intro-section__content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .brand-story-intro-section__headline {
+    font-size: 32px;
+  }
+
+  .brand-story-intro-section__divider-line {
+    width: 60px;
+    margin-bottom: 24px;
+  }
+
+  .brand-story-intro-section__image-wrapper {
+    order: -1;
+  }
+
+  .brand-story-intro-section__compass-overlay {
+    width: 60px;
+    height: 60px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .brand-story-intro-section__topo-decoration {
+    display: none;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */

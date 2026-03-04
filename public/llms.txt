@@ -8,7 +8,7 @@
 https://example.com
 ביגוד גלישה וקייטסרפינג ישראל שמתעד את רוח החופש המוחלטת. חולצות מעוצבות לחובבי גלישה וטיולים עם דימויים של ים טורקיז, חופים וטבע פראי.
 
-### מוצרים
+### Products
 https://example.com/products
 המוצרים שלנו - TSABABA BAY WEAR
 
@@ -16,31 +16,31 @@ https://example.com/products
 https://example.com/brand-story
 גלו את הסיפור מאחורי המותג שנולד מתוך אהבה לאוקיינוס ולחיים נוודים. ביגוד גלישה אותנטי שחוגג את קהילת הגולשים והרפתקאות בסרי לנקה וסיני.
 
-### עגלת קניות
+### Cart
 https://example.com/cart
 עגלת הקניות שלך
 
-### תשלום
+### Checkout
 https://example.com/checkout
 תשלום
 
-### התחברות
+### Login
 https://example.com/login
 התחברות לקוחות
 
-### החשבון שלי
+### Account
 https://example.com/account
 החשבון שלי
 
-### ההזמנה התקבלה!
+### Order Success
 https://example.com/order-success
 תודה על ההזמנה
 
-### פרטי המוצר
+### Product Detail
 https://example.com/product/:slug
 פרטי המוצר - TSABABA BAY WEAR
 
-### מוצרים
+### Category
 https://example.com/category/:slug
 מוצרים - TSABABA BAY WEAR
 

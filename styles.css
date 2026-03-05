@@ -7462,6 +7462,12 @@ body.accessibility-widget-visible ._access-menu {
 
 
 
+
+
+
+
+
+
 /* ==ZAPPY V2 E-COMMERCE THEME CSS== */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 /* V2 E-COMMERCE CSS - Clean V2 Variables Only                                  */
@@ -7567,7 +7573,7 @@ main.page-container.ecommerce-page,
   font-size: 16px;
   color: inherit;
   height: 2.4em;
-  line-height: 1.2em;
+  line-height: 1.2em !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -7681,7 +7687,7 @@ main.page-container.ecommerce-page,
 .product-grid.layout-detailed { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px; }
 .product-card.detailed { padding: 20px; }
 .product-card.detailed img, .product-card.detailed .no-image-placeholder { height: 220px; }
-.product-card.detailed h3 { font-size: 18px; margin: 14px 0 10px; min-height: auto; -webkit-line-clamp: unset; }
+.product-card.detailed h3 { font-size: 18px; margin: 14px 0 10px; min-height: auto; height: auto; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
 .product-card.detailed p { min-height: auto; -webkit-line-clamp: 4; margin-bottom: 12px; }
 .product-card.detailed .price { font-size: 20px; padding-top: 12px; }
 .product-card.detailed .add-to-cart { display: block; padding: 12px; margin-top: 16px; }
@@ -8388,7 +8394,7 @@ main.page-container.ecommerce-page,
 }
 .order-summary {
   padding: 24px;
-  background: var(--bg-light);
+  background: #fafafa;
   border-radius: 12px;
   height: fit-content;
   position: sticky;
@@ -11794,3 +11800,15 @@ section[data-hero-type] {
 .variant-option.out-of-stock { opacity: 0.6; position: relative; }
 .variant-option.out-of-stock:not(.color-swatch)::after { content: ""; position: absolute; top: 50%; left: 4px; right: 4px; height: 1px; background: currentColor; transform: rotate(-12deg); pointer-events: none; }
 .variant-option.color-swatch.out-of-stock::before { content: ""; position: absolute; top: 50%; left: 2px; right: 2px; height: 1.5px; background: currentColor; transform: rotate(-45deg); pointer-events: none; z-index: 1; }
+
+
+/* ZAPPY_CONTACT_FORM_LAYOUT_FIX */
+form.contact-form, .contact-form { flex-direction: column !important; align-items: stretch !important; }
+form.contact-form > .contact-form-field, .contact-form > .contact-form-field { width: 100% !important; align-self: stretch !important; }
+form.contact-form .contact-input, form.contact-form .contact-textarea { width: 100% !important; box-sizing: border-box !important; }
+
+
+/* ZAPPY_SECTION_BG_TYPE_FIX */
+[data-zappy-bg-type="color"] { background-image: none !important; background-color: var(--zappy-bg-color, transparent) !important; }
+[data-zappy-bg-type="image"] { background-image: linear-gradient(var(--zappy-bg-overlay, rgba(0,0,0,0)), var(--zappy-bg-overlay, rgba(0,0,0,0))), var(--zappy-bg-image, none) !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; }
+[data-zappy-bg-type="video"] { background-image: none !important; }
